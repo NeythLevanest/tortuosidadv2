@@ -30,6 +30,7 @@ public class Ruta extends Thread{
     MatrizPrueba matrizPrueba;
     Rectangle [][] rutaPaint;
     int espacioLibre = 1;
+    int tamanoCelda = 20;
    
     int [][] matrizAOperar; //CREARLAS MATRICES A ANALIZAR AQUI
     float sumaTortuosidades =0;
@@ -56,9 +57,9 @@ public class Ruta extends Thread{
                         int pasos = BFSMatriz.rutaBFSMatriz(matrizAOperar, matrizPrueba.getFilas(), matrizPrueba.getColumnas(), fila, 0,destino); //ASUMIMOS MATRICES DE 30X50
                         for(Estado estado:BFSMatriz.getRuta()){
                             grafico.setColor(color);
-                            grafico.fillRect(estado.getY()*20,estado.getX()*20, 20, 20);
+                            grafico.fillRect(estado.getY()*tamanoCelda,estado.getX()*tamanoCelda, tamanoCelda, tamanoCelda);
                             grafico.setColor(color);
-                            grafico.fillRect(estado.getY()*20,estado.getX()*20, 20, 20);
+                            grafico.fillRect(estado.getY()*tamanoCelda,estado.getX()*tamanoCelda, tamanoCelda, tamanoCelda);
                         }
                         if (pasos == -1){
                             System.out.println("Error 404: Destino not found\n");

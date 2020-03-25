@@ -39,15 +39,15 @@ public class MatrizPrueba {
     public void paint(){
         //Aqui se debe cambiar el nombre del archivo para graficar la matriz
         this.matriz = getReadMatrizFile("7",185,171);
-        
+        int tamanoCelda = 20;
         for(int f=0;f<filas;f++){
             for(int c=0;c<columnas;c++){
                 //matrizPaint[i][j]=(new Rectangle(512/columnas*j,512/filas*i,512/columnas,512/filas)); 
                 if(this.matriz[f][c]==1){
                     grafico.setColor(Color.blue);
-                    grafico.fillRect(c*20, f*20, 20, 20);
+                    grafico.fillRect(c*tamanoCelda, f*tamanoCelda, tamanoCelda, tamanoCelda);
                     grafico.setColor(Color.black);
-                    grafico.drawRect(c*20, f*20, 20,20);
+                    grafico.drawRect(c*tamanoCelda, f*tamanoCelda, tamanoCelda,tamanoCelda);
                 }
             }
         }
